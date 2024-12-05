@@ -1,0 +1,104 @@
+.left-form {
+    -fx-background-color: #22a148;
+    -fx-border-color: #000;
+    -fx-border-width: 0.4px 0px 0.4px 0.4px;
+}
+
+.right-form {
+    -fx-background-color: #fff;
+    -fx-border-color: #000;
+    -fx-border-width: 0.4px 0.4px 0.4px 0px;
+}
+
+.close {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+
+}
+
+.close : hover {
+    -fx-background-color: #fb3d63;
+
+}
+
+.avatar {
+    width: 50px;
+    /* Kích thước của avatar */
+    height: 50px;
+    background-color: #ccc;
+    /* Màu nền avatar */
+    border-radius: 50%;
+    /* Tạo hình tròn */
+    display: flex;
+    /* Căn giữa icon */
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    /* Kích thước icon */
+    color: white;
+    /* Màu của icon */
+}
+
+.circle-image {
+    -fx-shape: "M 0, 0 h 100 a 50, 50 0 1, 1 0, 100 a 50, 50 0 1, 1 0, -100 z";
+    /* Tạo hình tròn */
+    -fx-background-color: transparent;
+    /* Màu nền trong suốt */
+    -fx-background-size: cover;
+    /* Đảm bảo ảnh vừa khít */
+    -fx-border-color: #ccc;
+    /* Màu viền */
+    -fx-border-width: 2;
+    /* Độ dày viền */
+    -fx-border-radius: 50%;
+    /* Đảm bảo viền bo tròn */
+    -fx-padding: 5;
+    /* Khoảng cách giữa viền và ảnh */
+}
+
+.button-round {
+    -fx-background-color: #7c3535;
+    /* Màu nền */
+    -fx-text-fill: white;
+    /* Màu chữ */
+    -fx-padding: 10px 20px;
+    /* Kích thước padding */
+    -fx-border-radius: 50px;
+    /* Đường viền bo tròn */
+    -fx-background-radius: 50px;
+    -fx-border-color: #2980b9;
+    /* Màu viền */
+    -fx-border-width: 2px;
+    /* Độ dày viền */
+}
+
+.CLEAR-btn {
+    -fx-background-color:#266451;
+    -fx-cursor: hand;
+}
+.UPDATE-btn {
+    -fx-background-color:#3a70a7;
+    -fx-cursor: hand;
+}
+.DELETE-btn {
+    -fx-background-color:#a13636;
+    -fx-cursor: hand;
+}
+.ADD-btn {
+    -fx-background-color:#6b7e37;
+    -fx-cursor: hand;
+}
+
+
+.anchor-pane {
+    -fx-background-color: white; /* Màu nền trắng */
+    -fx-border-radius: 15px; /* Viền tròn */
+    -fx-border-color: black; /* Màu viền đen */
+    -fx-border-width: 2px; /* Độ rộng viền */
+}
+.anchor-pane1 {
+     -fx-background-color: linear-gradient(to right, #344250, #3c6382);
+    -fx-border-radius: 15px; /* Viền tròn */
+    -fx-border-color: black; /* Màu viền đen */
+    -fx-border-width: 2px; /* Độ rộng viền */
+}

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.LoginController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="640.0" prefWidth="480.0">
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <children>
+            <AnchorPane layoutY="6.0" prefHeight="200.0" prefWidth="200.0" styleClass="left-form" stylesheets="@../styles/loginAnchoPane.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="640.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" glyphName="BOOK" layoutX="196.0" layoutY="290.0" selectionFill="#652a2a" size="20em" wrappingWidth="176.8571434020996" />
+                  <Label layoutX="57.0" layoutY="374.0" text="LIBRARY MANAGEMENT SYSTEM" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIcon fill="WHITE" glyphName="GRADUATION_CAP" layoutX="179.0" layoutY="640.0" size="15em" />
+               </children></AnchorPane>
+            <AnchorPane focusTraversable="true" layoutX="640.0" prefHeight="200.0" prefWidth="200.0" styleClass="close" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="640.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <FontAwesomeIcon glyphName="USER" layoutX="239.0" layoutY="135.0" size="150" wrappingWidth="121.0" x="40.0" y="40.0" AnchorPane.leftAnchor="280.0" AnchorPane.topAnchor="46.42857360839844" />
+                  <Label layoutX="200.0" layoutY="196.0" text="WELCOME TO MY APP!" textFill="#a12323">
+                     <font>
+                        <Font name="Times New Roman Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="loginUserName" alignment="TOP_LEFT" layoutX="217.0" layoutY="252.0" onAction="#methodManager" prefHeight="40.0" prefWidth="260.0" promptText="UserName">
+                     <font>
+                        <Font name="Times New Roman Bold" size="20.0" />
+                     </font></TextField>
+                  <Button fx:id="loginButton" layoutX="193.0" layoutY="501.0" mnemonicParsing="false" onMouseClicked="#loginForThree" prefHeight="50.0" prefWidth="308.0" text="LOGIN " textAlignment="CENTER">
+                     <font>
+                        <Font name="Times New Roman Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <PasswordField fx:id="loginPassWord" layoutX="217.0" layoutY="323.0" onAction="#methodManager" prefHeight="40.0" prefWidth="260.0" promptText="Password">
+                     <font>
+                        <Font name="Times New Roman Bold" size="20.0" />
+                     </font></PasswordField>
+                  <Button fx:id="SignUpButton" layoutX="193.0" layoutY="650.0" mnemonicParsing="false" onAction="#signUpForReader" prefHeight="50.0" prefWidth="308.0" text="SIGN UP" textAlignment="CENTER" AnchorPane.leftAnchor="193.0" AnchorPane.rightAnchor="139.0">
+                     <font>
+                        <Font name="Times New Roman Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="329.0" layoutY="596.0" text="OR" textFill="#b93838">
+                     <font>
+                        <Font name="Times New Roman Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="loginClose" layoutX="428.0" layoutY="-1.0" mnemonicParsing="false" onAction="#loginClose" prefHeight="75.0" prefWidth="131.0" styleClass="close" stylesheets="@../styles/loginAnchoPane.css" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+                  <FontAwesomeIcon glyphName="CLOSE" layoutX="562.0" layoutY="52.0" size="3em" text="" wrappingWidth="20.85714340209961" AnchorPane.rightAnchor="57.14285659790039" AnchorPane.topAnchor="21.14285659790039" />
+                  <CheckBox fx:id="loginShowPassword" layoutX="206.0" layoutY="399.0" mnemonicParsing="false" onAction="#showPass" text="Show password">
+                     <font>
+                        <Font name="Times New Roman" size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <TextField fx:id="showPass" layoutX="217.0" layoutY="323.0" onAction="#showPass" prefHeight="40.0" prefWidth="260.0" visible="false">
+                     <font>
+                        <Font name="Times New Roman Bold" size="20.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="backToChooseRole" layoutY="9.0" mnemonicParsing="false" onAction="#setBackToChooseRole" prefHeight="75.0" prefWidth="131.0" styleClass="close" stylesheets="@../styles/loginAnchoPane.css" AnchorPane.bottomAnchor="725.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="509.0" AnchorPane.topAnchor="0.0" />
+                  <FontAwesomeIcon glyphName="ARROW_LEFT" layoutX="50.0" layoutY="50.0" size="3em" />
+                  <Button fx:id="buttonForget" layoutX="365.0" layoutY="396.0" mnemonicParsing="false" onAction="#goToForgetPass" styleClass="forget-button" stylesheets="@../styles/dashBoard.css" text="Forget password??? " />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

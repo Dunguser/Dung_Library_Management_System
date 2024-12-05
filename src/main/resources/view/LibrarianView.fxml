@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.LibrarianController">
+    <children>
+        <AnchorPane fx:id="mainFormLibrarymanager" prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <BorderPane prefHeight="821.0" prefWidth="1298.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+                    <top>
+                        <AnchorPane prefHeight="62.0" prefWidth="1291.0" styleClass="semi-top-form" stylesheets="@../styles/dashBoard.css" BorderPane.alignment="CENTER">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <children>
+                                <AnchorPane layoutX="7.0" layoutY="12.0" prefHeight="48.0" prefWidth="1280.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="12.0">
+                                    <children>
+                                        <FontAwesomeIcon glyphName="BOOK" layoutX="35.0" layoutY="39.0" size="3em" />
+                                        <Button fx:id="minimizeBuOnHome" layoutX="1097.0" layoutY="3.0" mnemonicParsing="false" onAction="#minimize" prefHeight="41.0" prefWidth="96.0" styleClass="minimize" stylesheets="@../styles/dashBoard.css" AnchorPane.rightAnchor="107.0" AnchorPane.topAnchor="3.0" />
+                                        <FontAwesomeIcon glyphName="MINUS" layoutX="1131.0" layoutY="38.0" size="3em" text="" />
+                                        <Label layoutX="81.0" layoutY="16.0" text="LIBRARY MANAGEMENT SYSTEM ">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="closeBuOnHome" layoutX="1199.0" layoutY="1.0" mnemonicParsing="false" onAction="#close" prefHeight="45.0" prefWidth="95.0" styleClass="close" stylesheets="@../styles/dashBoard.css" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="1.0" />
+                                        <FontAwesomeIcon glyphName="CLOSE" layoutX="1232.0" layoutY="36.0" size="3em" wrappingWidth="28.285715103149414" />
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </top>
+                    <left>
+                        <AnchorPane prefHeight="750.0" prefWidth="231.0" styleClass="nav-form" stylesheets="@../styles/dashBoard.css" BorderPane.alignment="CENTER">
+                            <children>
+                                <Label layoutX="30.0" layoutY="150.0" text="WELCOME LIBRARIAN" textFill="WHITE">
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="17.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="29.0" layoutY="181.0" text="☆*: .｡. o(≧▽≦)o .｡.:*☆" textFill="WHITE">
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="NameOfLibrary" alignment="CENTER" layoutX="25.0" layoutY="221.0" prefHeight="20.0" prefWidth="205.0" text="Nguyễn " textFill="#f8f8f8">
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="131.0" endY="-19.0" layoutX="83.0" layoutY="287.0" startX="-83.0" startY="-19.0" stroke="WHITE" />
+                                <Button fx:id="HomeButton" layoutX="4.0" layoutY="279.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchForm" prefHeight="50.0" prefWidth="221.0" styleClass="nav-btn" stylesheets="@../styles/dashBoard.css" text="Home" textFill="#f2efef">
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="HOME" />
+                                    </graphic>
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="24.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="ListReaderButton" layoutX="4.0" layoutY="325.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchForm" prefHeight="50.0" prefWidth="221.0" styleClass="nav-btn" stylesheets="@../styles/dashBoard.css" text="List reader" textFill="#f2efef">
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="PLUS_CIRCLE" />
+                                    </graphic>
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="24.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="loanShipButton" layoutX="25.0" layoutY="419.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchForm" prefHeight="50.0" prefWidth="207.0" styleClass="nav-btn" stylesheets="@../styles/dashBoard.css" text="Loan ship" textFill="#f2efef">
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="FILE" />
+                                    </graphic>
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="24.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="BookShelf" layoutX="5.0" layoutY="375.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchForm" prefHeight="50.0" prefWidth="221.0" styleClass="nav-btn" stylesheets="@../styles/dashBoard.css" text="Book Store" textFill="#f2efef">
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="BOOK" />
+                                    </graphic>
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="24.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="SignOut" layoutX="27.0" layoutY="664.0" mnemonicParsing="false" onAction="#SignOut" prefHeight="52.0" prefWidth="202.0" styleClass="nav1111-btn" stylesheets="@../styles/dashBoard.css" text="Sign out" textFill="WHITE">
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="24.0" />
+                                    </font>
+                                </Button>
+                                <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" layoutX="36.0" layoutY="704.0" size="3em" text="" />
+                                <ImageView fx:id="imageLibararianOnWelcom" fitHeight="100.0" fitWidth="100.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" x="50.0" y="10.0">
+                                    <!--                            <clip>-->
+                                    <!--                                <Circle centerX="50" centerY="50" radius="50" />-->
+                                    <!--                            </clip>-->
+                                    <image>
+                                        <Image url="@../image/canh.png" />
+                                    </image>
+                                </ImageView>
+                                <Button fx:id="resourceBook" alignment="CENTER" layoutX="25.0" layoutY="463.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchForm" prefHeight="50.0" prefWidth="207.0" styleClass="nav-btn" stylesheets="@../styles/dashBoard.css" text="Resource" textFill="#f2efef">
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="BOOK" />
+                                    </graphic>
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="24.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </AnchorPane>
+                    </left>
+                    <center>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <AnchorPane fx:id="HomeViewLibrary" layoutX="392.0" layoutY="327.0" prefHeight="750.0" prefWidth="1055.0" stylesheets="@../styles/dashBoard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <AnchorPane fx:id="HomeView" layoutX="33.0" layoutY="7.0" prefHeight="744.0" prefWidth="998.0" styleClass="white-bg" stylesheets="@../styles/dashBoard.css">
+                                            <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </padding>
+                                            <children>
+                                                <TableView fx:id="tableRequestBorrow" layoutX="19.0" layoutY="232.0" onMouseClicked="#actionTableRequest" prefHeight="490.0" prefWidth="969.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="colRequestID" prefWidth="92.00000381469727" text="Reader#" />
+                                                        <TableColumn fx:id="colResquestFullName" prefWidth="218.3999786376953" text="Full name" />
+                                                        <TableColumn fx:id="colRequestTitleBook" prefWidth="290.0" text="Title book" />
+                                                        <TableColumn fx:id="colRequestQuantity" prefWidth="90.0" text="Quantity" />
+                                                        <TableColumn fx:id="colRequestBorrowDate" prefWidth="133.0" text="Borrow Date" />
+                                                        <TableColumn fx:id="colRequestReturnDate" prefWidth="133.0" text="Return Schedule" />
+                                                    </columns>
+                                                </TableView>
+                                                <Label alignment="TOP_CENTER" layoutX="10.0" layoutY="180.0" prefHeight="42.0" prefWidth="309.0" styleClass="node" stylesheets="@../styles/dashBoard.css" text="Borrow Request List" textAlignment="RIGHT">
+                                                    <font>
+                                                        <Font name="System Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <AnchorPane layoutX="19.0" layoutY="14.0" prefHeight="150.0" prefWidth="250.0" styleClass="card" stylesheets="@../styles/dashBoard.css">
+                                                    <children>
+                                                        <FontAwesomeIcon glyphName="USERS" layoutX="35.0" layoutY="96.0" size="5em" />
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="355.0" layoutY="14.0" prefHeight="150.0" prefWidth="250.0" styleClass="card" stylesheets="@../styles/dashBoard.css">
+                                                    <children>
+                                                        <FontAwesomeIcon glyphName="USERS" layoutX="28.0" layoutY="89.0" size="5em" />
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="682.0" layoutY="14.0" prefHeight="150.0" prefWidth="250.0" styleClass="card" stylesheets="@../styles/dashBoard.css">
+                                                    <children>
+                                                        <FontAwesomeIcon glyphName="BOOK" layoutX="33.0" layoutY="89.0" size="5em" />
+                                                    </children>
+                                                </AnchorPane>
+                                                <Button fx:id="enterAllowBorrow" layoutX="829.0" layoutY="181.0" mnemonicParsing="false" onAction="#actionLibrarian" prefHeight="33.0" prefWidth="102.0" text="ALLOW">
+                                                    <font>
+                                                        <Font name="System Bold" size="16.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="listReaderView" layoutX="445.0" layoutY="311.0" prefHeight="750.0" prefWidth="1055.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <AnchorPane layoutX="6.0" layoutY="7.0" prefHeight="750.0" prefWidth="1042.0" stylesheets="@../styles/dashBoard.css">
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <TextField fx:id="searchOnListReaderView" layoutX="14.0" layoutY="14.0" onAction="#setupReaderSearchFeature" prefHeight="41.0" prefWidth="544.0" promptText="🔎 Search" stylesheets="@../styles/dashBoard.css">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="17.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TableView fx:id="tableViewListReader" layoutX="6.0" layoutY="83.2" onMouseClicked="#actionTableReader" prefHeight="539.0" prefWidth="1030.0" stylesheets="@../styles/dashBoard.css" tableMenuButtonVisible="true" AnchorPane.topAnchor="83.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="colReaderIDOnReaderView" prefWidth="111.0" text="Reader#" />
+                                                        <TableColumn fx:id="colLastNameOnReaderView" prefWidth="120.0" text="Last name" />
+                                                        <TableColumn fx:id="colFirstNameOnReaderView" prefWidth="82.0" text="First name" />
+                                                        <TableColumn fx:id="colBirthOnReaderView" prefWidth="90.0" text="Birth date" />
+                                                        <TableColumn fx:id="colSexOnReaderView" prefWidth="70.0" text="Sex" />
+                                                        <TableColumn fx:id="colPhoneOnReaderView" prefWidth="116.0" text="Phone" />
+                                                        <TableColumn fx:id="colGamilOnReaderView" prefWidth="200.0" text="Gmail" />
+                                                        <TableColumn fx:id="colAddressOnReaderView" prefWidth="191.0" text="Addrress" />
+                                                    </columns>
+                                                </TableView>
+                                                <Line endX="889.0" endY="-39.0" layoutX="136.0" layoutY="674.0" startX="-135.40000915527344" startY="-30.20001220703125" />
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="listBookOnLibrary" layoutX="6.0" layoutY="14.0" prefHeight="775.0" prefWidth="1132.0" styleClass="search" stylesheets="@../styles/dashBoard.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <TableView fx:id="tableListBookView" layoutX="57.0" layoutY="99.0" onMouseClicked="#selectBook" prefHeight="532.0" prefWidth="1074.0" stylesheets="@../styles/dashBoard.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="-20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+                                            <columns>
+                                                <TableColumn fx:id="colIdBookOnListBookView" prefWidth="92.0" text="Book# " />
+                                                <TableColumn fx:id="colTitleBookOnListBookView" prefWidth="350.0" text="Title" />
+                                                <TableColumn fx:id="colAuthorBookOnListBookView" prefWidth="150.0" text="Author" />
+                                                <TableColumn fx:id="colPublisherOnListBookView" prefWidth="150.0" text="Publisher" />
+                                                <TableColumn fx:id="colQuantityOnListBookView" prefWidth="100.0" text="Quantity" />
+                                                <TableColumn fx:id="colPublishedDateOnListBookView" prefWidth="150.0" text="Publised Date" />
+                                            </columns>
+                                            <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </padding>
+                                            <cursor>
+                                                <Cursor fx:constant="DEFAULT" />
+                                            </cursor>
+                                        </TableView>
+                                        <TextField fx:id="enterSearchBook" layoutX="82.0" layoutY="23.0" onAction="#setupSearchBookFeature" prefHeight="44.0" prefWidth="535.0" promptText="🔎Search" />
+                                        <Button fx:id="enterAddBook" layoutX="61.0" layoutY="666.0" mnemonicParsing="false" onAction="#actionLibrarian" prefHeight="56.0" prefWidth="222.0" text="ADD BOOK">
+                                            <graphic>
+                                                <FontAwesomeIcon glyphName="PLUS_CIRCLE" />
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="enterShowInfoBook" layoutX="604.0" layoutY="646.0" mnemonicParsing="false" onAction="#actionLibrarian" prefHeight="40.0" prefWidth="120.0" text="SHOW INFO" visible="false">
+                                            <font>
+                                                <Font name="System Bold" size="14.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="enterUpdateBook" layoutX="759.0" layoutY="646.0" mnemonicParsing="false" onAction="#actionLibrarian" prefHeight="40.0" prefWidth="120.0" text="UPDATE" visible="false">
+                                            <font>
+                                                <Font name="System Bold" size="17.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="enterDeleteBook" layoutX="914.0" layoutY="646.0" mnemonicParsing="false" onAction="#actionLibrarian" prefHeight="40.0" prefWidth="120.0" text="DELETE" visible="false">
+                                            <font>
+                                                <Font name="System Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="searchBookAPIView" prefHeight="753.0" prefWidth="1074.0" visible="false">
+                                    <children>
+                                        <TextField fx:id="searchBookAPI" layoutX="48.0" layoutY="29.0" onKeyPressed="#actionSearchAPI" prefHeight="42.0" prefWidth="668.0" promptText="🔎Search">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="19.0" />
+                                            </font>
+                                        </TextField>
+                                        <ScrollPane hbarPolicy="NEVER" layoutY="100.0" prefHeight="654.0" prefWidth="1074.0" vbarPolicy="ALWAYS">
+                                            <content>
+                                                <VBox fx:id="lineBookAPI" prefWidth="1060.0" />
+                                            </content>
+                                        </ScrollPane>
+                                        <Button fx:id="buttonSearchAPI" layoutX="716.0" layoutY="29.0" mnemonicParsing="false" onAction="#actionLibrarian" prefHeight="41.0" prefWidth="52.0" text="🔎">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="listOfBookBorrowers" layoutX="-15.0" layoutY="5.0" prefHeight="759.0" prefWidth="1072.0" visible="false" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="-15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="5.0">
+                                    <children>
+                                        <TableView fx:id="tableListBookBorrow" layoutX="20.0" layoutY="75.2" prefHeight="579.0" prefWidth="1015.0" stylesheets="@../styles/dashBoard.css" AnchorPane.bottomAnchor="123.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="75.0">
+                                            <columns>
+                                                <TableColumn fx:id="ColumnIdReaderOnBorrow" prefWidth="116.0" text="Reader#" />
+                                                <TableColumn fx:id="columnNameReaderOnBorrow" prefWidth="206.0" text="Full name" />
+                                                <TableColumn fx:id="columnTitleBookOnBorrow" prefWidth="231.0" text="Title book" />
+                                                <TableColumn fx:id="columnQuantityOnBorrow" prefWidth="74.0" text="quantity" />
+                                                <TableColumn fx:id="columnBorrowDateOnBorrow" prefWidth="133.0" text="Borrow date" />
+                                                <TableColumn fx:id="columnReturnDateOnBorrow" prefWidth="139.0" text="Return Schedule" />
+                                                <TableColumn fx:id="columnStatusOnBorrow" prefWidth="96.0" text="Status" />
+                                            </columns>
+                                        </TableView>
+                                        <Label alignment="TOP_CENTER" layoutX="668.0" layoutY="16.0" prefHeight="28.0" prefWidth="264.0" styleClass="node" stylesheets="@../styles/dashBoard.css" text="Book borrowing list">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="readerOnTableBorrow" layoutX="36.0" layoutY="25.0" onAction="#setupSearchBorrowerFeature" prefHeight="18.0" prefWidth="526.0" promptText="🔎Search" styleClass="search" stylesheets="@../styles/dashBoard.css">
+                                 <font>
+                                    <Font name="Times New Roman Bold" size="24.0" />
+                                 </font></TextField>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="readerDetail" prefHeight="759.0" prefWidth="1072.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <AnchorPane layoutX="424.0" layoutY="33.0" prefHeight="200.0" prefWidth="200.0" />
+                                        <AnchorPane layoutX="20.0" layoutY="13.0" prefHeight="711.0" prefWidth="1026.0" styleClass="shadow1" stylesheets="@../styles/dashBoard.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                            <children>
+                                                <AnchorPane layoutX="371.0" layoutY="43.0" prefHeight="201.0" prefWidth="194.0" styleClass="shadow1" stylesheets="@../styles/dashBoard.css">
+                                                    <children>
+                                                        <ImageView fx:id="detailImageReader" fitHeight="150.0" fitWidth="204.0" layoutX="-43.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                                    </children>
+                                                </AnchorPane>
+                                                <TextField fx:id="detailBirthReader" layoutX="614.0" layoutY="384.0" prefHeight="44.0" prefWidth="224.0">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="detailFirstNameReader" layoutX="166.0" layoutY="466.0" prefHeight="35.0" prefWidth="170.0">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label layoutX="24.0" layoutY="468.0" text="First name :">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="33.0" layoutY="392.0" text="Last name :">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="detailLastNameReader" layoutX="164.0" layoutY="384.0" prefHeight="35.0" prefWidth="170.0">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="detailPhoneReader" layoutX="615.0" layoutY="474.0" prefHeight="44.0" prefWidth="223.0">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="detailAddressReader" layoutX="614.0" layoutY="554.0" prefHeight="44.0" prefWidth="374.0">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label layoutX="505.0" layoutY="562.0" text="Address :">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="523.0" layoutY="482.0" text="Phone :">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="487.0" layoutY="392.0" text="Birth date :">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="detailIdReader" layoutX="162.0" layoutY="303.0" prefHeight="35.0" prefWidth="172.0">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label layoutX="49.0" layoutY="311.0" text="Reader# :">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="detailSexReader" layoutX="614.0" layoutY="303.0" prefHeight="44.0" prefWidth="224.0">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label layoutX="547.0" layoutY="311.0" text="Sex :">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="detailGamilReader" layoutX="130.0" layoutY="554.0" prefHeight="44.0" prefWidth="333.0">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label layoutX="33.0" layoutY="562.0" text="Gamil :">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="445.0" layoutY="661.0" text="READER">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="36.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="addBookView" layoutX="100.0" layoutY="75.0" prefHeight="583.0" prefWidth="820.0" styleClass="background-gray" stylesheets="@../styles/dashBoard.css" visible="false">
+                                    <children>
+                                        <TextField fx:id="enterNewTitleBook" alignment="CENTER" layoutX="166.0" layoutY="68.0" prefHeight="30.0" prefWidth="560.0" promptText="Title Book">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="19.0" />
+                                            </font></TextField>
+                                        <TextField fx:id="enterNewIdBook" alignment="CENTER" layoutX="169.0" layoutY="111.0" prefHeight="30.0" prefWidth="560.0" promptText="ID">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="19.0" />
+                                            </font></TextField>
+                                        <TextField fx:id="enterNewAuthorBook" alignment="CENTER" layoutX="169.0" layoutY="153.0" prefHeight="30.0" prefWidth="560.0" promptText="Author">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="19.0" />
+                                            </font></TextField>
+                                        <TextField fx:id="enterNewPublisher" alignment="CENTER" layoutX="169.0" layoutY="195.0" prefHeight="30.0" prefWidth="560.0" promptText="Publiser">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="19.0" />
+                                            </font></TextField>
+                                        <TextField fx:id="enterNewQuantityBook" alignment="CENTER" layoutX="169.0" layoutY="236.0" prefHeight="30.0" prefWidth="560.0" promptText="0">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="19.0" />
+                                            </font></TextField>
+                                        <TextField fx:id="enterNewPubDate" alignment="CENTER" layoutX="169.0" layoutY="278.0" prefHeight="30.0" prefWidth="560.0" promptText="yyyy-mm-dd">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="19.0" />
+                                            </font></TextField>
+                                        <Label layoutX="373.0" layoutY="14.0" prefHeight="28.0" prefWidth="146.0" text="ADD BOOK" textFill="#753030">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="enterConfirm" layoutX="317.0" layoutY="506.0" mnemonicParsing="false" onAction="#actionLibrarian" styleClass="node" stylesheets="@../styles/dashBoard.css" text="CONFIRM" textFill="WHITE">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="exitAddBook" layoutX="749.0" mnemonicParsing="false" onAction="#actionLibrarian" prefHeight="35.0" prefWidth="74.0" styleClass="close" stylesheets="@../styles/dashBoard.css">
+                                            <graphic>
+                                                <FontAwesomeIcon glyphName="CLOSE" size="2em" />
+                                            </graphic>
+                                        </Button>
+                                        <TextField fx:id="enterNewPageNum" alignment="CENTER" layoutX="169.0" layoutY="319.0" prefHeight="30.0" prefWidth="560.0" promptText="Page Number">
+                                            <font>
+                                                <Font name="Times New Roman" size="19.0" />
+                                            </font></TextField>
+                                        <VBox layoutX="18.0" layoutY="68.0" prefHeight="420.0" prefWidth="151.0">
+                                            <children>
+                                                <Label alignment="CENTER" prefHeight="42.0" prefWidth="151.0" styleClass="table-view" stylesheets="@../styles/dashBoard.css" text="Title">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="CENTER" prefHeight="42.0" prefWidth="151.0" styleClass="table-view" stylesheets="@../styles/dashBoard.css" text="ID">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="CENTER" prefHeight="42.0" prefWidth="151.0" styleClass="table-view" stylesheets="@../styles/dashBoard.css" text="Author">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="CENTER" prefHeight="42.0" prefWidth="151.0" styleClass="table-view" stylesheets="@../styles/dashBoard.css" text="Publisher">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="CENTER" prefHeight="42.0" prefWidth="151.0" styleClass="table-view" stylesheets="@../styles/dashBoard.css" text="Quantity">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="CENTER" prefHeight="42.0" prefWidth="151.0" styleClass="table-view" stylesheets="@../styles/dashBoard.css" text="Publised Date">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" styleClass="table-view" text="Page Number">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font></Button>
+                                                <Button alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="150.0" styleClass="table-view" text="Language">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font></Button>
+                                                <Button alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="150.0" styleClass="table-view" text="Description">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font></Button>
+                                                <Button alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" styleClass="table-view" text="Link Image">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font></Button>
+                                            </children>
+                                        </VBox>
+                                        <TextField fx:id="enterNewLang" alignment="CENTER" layoutX="169.0" layoutY="363.0" prefHeight="30.0" prefWidth="560.0" promptText="Language">
+                                            <font>
+                                                <Font name="Times New Roman" size="19.0" />
+                                            </font>
+                                        </TextField>
+                                        <TextField fx:id="enterNewDescrib" alignment="CENTER" layoutX="169.0" layoutY="405.0" prefHeight="30.0" prefWidth="560.0" promptText="Description">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="19.0" />
+                                            </font>
+                                        </TextField>
+                                        <TextField fx:id="enterNewImage" alignment="CENTER" layoutX="169.0" layoutY="448.0" prefHeight="30.0" prefWidth="560.0" promptText="Image Link">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="19.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="infoBookView" layoutX="131.0" layoutY="72.0" prefHeight="579.0" prefWidth="818.0" styleClass="background-gray" stylesheets="@../styles/dashBoard.css" visible="false">
+                                    <children>
+                                        <Label fx:id="textInfoTitleBook" layoutX="282.0" layoutY="91.0" prefHeight="30.0" prefWidth="524.0" text="Title :">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="textInfoIdBook" layoutX="282.0" layoutY="138.0" prefHeight="28.0" prefWidth="357.0" text="ID :">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="textInfoAuthorBook" layoutX="282.0" layoutY="183.0" prefHeight="28.0" prefWidth="486.0" text="Author :">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="textInfoPublisherBook" layoutX="282.0" layoutY="231.0" prefHeight="28.0" prefWidth="532.0" text="Publisher :">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="textInfoQuantityBook" layoutX="282.0" layoutY="290.0" prefHeight="22.0" prefWidth="400.0" text="Quantity :">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="textInfoPublishedDate" layoutX="282.0" layoutY="343.0" prefHeight="22.0" prefWidth="400.0" text="Published Date :">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <ImageView fx:id="imageBookOnListBookView" fitHeight="239.0" fitWidth="200.0" layoutX="43.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Label fx:id="textInfoDescribeBook" layoutX="35.0" layoutY="450.0" prefHeight="28.0" prefWidth="750.0" text="Description :">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="textInfoPage" layoutX="35.0" layoutY="399.0" prefHeight="28.0" prefWidth="202.0" text="Page Number : ">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="exitInfo" layoutX="743.0" mnemonicParsing="false" onAction="#actionLibrarian" prefHeight="35.0" prefWidth="74.0" styleClass="close" stylesheets="@../styles/dashBoard.css">
+                                            <graphic>
+                                                <FontAwesomeIcon glyphName="CLOSE" size="2em" />
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="updateView" layoutX="102.0" layoutY="68.0" prefHeight="547.0" prefWidth="879.0" styleClass="background-gray" stylesheets="@../styles/dashBoard.css" visible="false">
+                                    <children>
+                                        <Label layoutX="66.0" layoutY="275.0" prefHeight="18.0" prefWidth="113.0" />
+                                        <Label layoutX="559.0" layoutY="140.0" styleClass="table-view" text="Page Number">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="543.0" layoutY="306.0" styleClass="table-view" text="Quantity">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="enterUpdateTitle" layoutX="195.0" layoutY="78.0" prefHeight="35.0" prefWidth="360.0" />
+                                        <TextField fx:id="enterUpdateAuthor" layoutX="195.0" layoutY="138.0" prefHeight="35.0" prefWidth="360.0" />
+                                        <TextField fx:id="enterUpdateQuantity" layoutX="674.0" layoutY="305.0" prefHeight="35.0" />
+                                        <TextField fx:id="enterUpdatePublisher" layoutX="195.0" layoutY="194.0" prefHeight="35.0" prefWidth="642.0" />
+                                        <TextField fx:id="enterUpdatePubDate" layoutX="195.0" layoutY="248.0" prefHeight="35.0" prefWidth="229.0" />
+                                        <TextField fx:id="enterUpdatePageNum" layoutX="709.0" layoutY="138.0" prefHeight="35.0" />
+                                        <TextField fx:id="enterUpdateLanguage" layoutX="195.0" layoutY="305.0" prefHeight="35.0" prefWidth="175.0" />
+                                        <TextField fx:id="enterUpdateDescribe" layoutX="195.0" layoutY="368.0" prefHeight="35.0" prefWidth="650.0" />
+                                        <Label alignment="TOP_CENTER" layoutX="336.0" layoutY="14.0" prefHeight="42.0" prefWidth="190.0" text="UPDATE BOOK" textFill="#b95353">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="enterSaveUpdate" layoutX="367.0" layoutY="450.0" mnemonicParsing="false" onAction="#actionLibrarian" prefHeight="46.0" prefWidth="121.0" styleClass="node" stylesheets="@../styles/dashBoard.css" text="SAVE" textFill="WHITE">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="exitUpdate" layoutX="824.0" layoutY="2.0" mnemonicParsing="false" onAction="#actionLibrarian" prefHeight="24.0" prefWidth="51.0">
+                                            <graphic>
+                                                <FontAwesomeIcon glyphName="CLOSE" />
+                                            </graphic>
+                                        </Button>
+                                        <VBox layoutX="15.0" layoutY="68.0" prefHeight="342.0" prefWidth="168.0">
+                                            <children>
+                                                <Label alignment="CENTER" prefHeight="57.0" prefWidth="168.0" styleClass="table-view" text="Title">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="CENTER" prefHeight="57.0" prefWidth="168.0" styleClass="table-view" text="Author">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="CENTER" prefHeight="57.0" prefWidth="169.0" styleClass="table-view" text="Publisher">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="CENTER" prefHeight="57.0" prefWidth="168.0" styleClass="table-view" text="Published Date">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="CENTER" prefHeight="57.0" prefWidth="170.0" styleClass="table-view" text="Language">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="CENTER" prefHeight="57.0" prefWidth="182.0" styleClass="table-view" text="Description">
+                                                    <font>
+                                                        <Font name="Times New Roman Bold" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </VBox>
+                                        <Label alignment="CENTER" layoutX="559.0" layoutY="80.0" prefHeight="32.0" prefWidth="145.0" styleClass="table-view" text="ID">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="enterUpdateId" layoutX="709.0" layoutY="78.0" prefHeight="35.0" />
+                                    </children>
+                                </AnchorPane>
+                        <AnchorPane fx:id="detailLoan" prefHeight="775.0" prefWidth="1082.0" visible="false">
+                           <children>
+                              <AnchorPane layoutX="22.0" layoutY="14.0" prefHeight="728.0" prefWidth="1039.0" styleClass="white-bg" stylesheets="@../styles/dashBoard.css">
+                                 <children>
+                                    <AnchorPane layoutX="25.0" layoutY="10.0" prefHeight="93.0" prefWidth="1005.0" styleClass="card" stylesheets="@../styles/loginAnchoPane.css">
+                                       <children>
+                                          <Label layoutX="265.0" layoutY="14.0" text="LIBRARY   MANAGEMENT   SYSTEM " textFill="WHITE">
+                                             <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="332.0" layoutY="51.0" text="BOOK   LOAN   COUPON" textFill="WHITE">
+                                             <font>
+                                                <Font name="Times New Roman Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="642.0" layoutY="121.0" prefHeight="591.0" prefWidth="310.0" styleClass="shadow1" stylesheets="@../styles/loginAnchoPane.css">
+                                       <children>
+                                          <ImageView fx:id="detailLoanImageReader" fitHeight="150.0" fitWidth="200.0" layoutX="123.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/USER.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="detailLoanimageBook" fitHeight="150.0" fitWidth="200.0" layoutX="98.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Line endX="212.0" endY="6.0" layoutX="92.0" layoutY="296.0" startX="-23.0" startY="6.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Label layoutX="90.0" layoutY="238.0" text="Reader#">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="91.0" layoutY="307.0" text="Full Name">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="88.0" layoutY="172.0" text="Loan#">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="97.0" layoutY="380.0" text="Title">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="99.0" layoutY="453.0" text="Quantity">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="94.0" layoutY="510.0" text="Borrow date">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="52.0" layoutY="551.0" prefHeight="66.0" prefWidth="181.0" text="Return Schedule" wrapText="true">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="detailLoanID" layoutX="240.0" layoutY="164.0">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="24.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="detailLoanNameReader" layoutX="240.0" layoutY="299.0">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="24.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="detailLoannameBook" layoutX="240.0" layoutY="372.0">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="24.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="detailLoanQuantity" layoutX="240.0" layoutY="445.0">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="24.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="detailLoanBorrowDate" layoutX="240.0" layoutY="502.0">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="24.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="detailLoanReturnSchedule" layoutX="240.0" layoutY="563.0">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="24.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="detailLoanReaderID" layoutX="240.0" layoutY="230.0">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="24.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </center>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>
